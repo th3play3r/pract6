@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Реєстрація користувача</title>
+    <meta charset="UTF-8">
+    <script>
+        function validateForm() {
+            var username = document.forms["registrationForm"]["username"].value;
+            var password = document.forms["registrationForm"]["password"].value;
+            var email = document.forms["registrationForm"]["email"].value;
+
+            if (username == "" || password == "" || email == "") {
+                alert("Будь ласка, заповніть всі поля");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Реєстрація нового користувача</h1>
+    <form name="registrationForm" action="process_registration.php" method="POST" onsubmit="return validateForm()">
+        <label for="username">Ім'я користувача:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="email">Електронна пошта:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="fullname">Повне ім'я:</label>
+        <input type="text" id="fullname" name="fullname"><br><br>
+
+        <label for="birthdate">Дата народження:</label>
+        <input type="date" id="birthdate" name="birthdate"><br><br>
+
+        <input type="submit" value="Зареєструватись">
+        <input type="reset" value="Скасувати">
+    </form>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Тестування</title>
+	<meta charset="utf-8">
+	<style>
+		.container {
+			width: 400px;
+			padding: 20px;
+			border: 1px solid #ccc;
+			text-align: center;
+		}
+
+		.question {
+			font-size: 20px;
+			margin-bottom: 20px;
+		}
+
+		.options {
+			display: flex;
+			justify-content: center;
+		}
+
+		.option {
+			margin: 0 10px;
+		}
+
+		.result {
+			margin-top: 20px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Тестування</h1>
+		<p class="question">Що літає?</p>
+		<div class="options">
+			<button class="option" onclick="checkAnswer(this)">Криша</button>
+			<button class="option" onclick="checkAnswer(this)">Попкорн</button>
+			<button class="option" onclick="checkAnswer(this)">Дрон</button>
+		</div>
+		<p class="result" id="result"></p>
+	</div>
+
+	<script>
+		function checkAnswer(button) {
+			const correctAnswer = "Дрон";
+			const userAnswer = button.textContent;
+
+			if (userAnswer === correctAnswer) {
+				button.style.backgroundColor = "green";
+				button.style.color = "white";
+				document.getElementById("result").textContent = "Відповідь правильна!";
+			} else {
+				button.style.backgroundColor = "red";
+				button.style.color = "white";
+				document.getElementById("result").textContent = "Відповідь неправильна!";
+			}
+
+			const options = document.getElementsByClassName("option");
+			for (let i = 0; i < options.length; i++) {
+				options[i].disabled = true;
+			}
+		}
+	</script>
+</body>
+</html>

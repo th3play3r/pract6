@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Тестування</title>
+    <script>
+        function checkAnswer() {
+            var answer = document.getElementById("answer").checked;
+            var correctAnswer = false;
+
+            if (answer !== correctAnswer) {
+                alert("Правильна відповідь!");
+            } else {
+                alert("Неправильна відповідь!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Тестування</h1>
+    <p>Логічна операція: ВИКЛЮЧАЮЧЕ АБО НЕ</p>
+    <p>Форма уведення інформації: ПЕРЕМИКАЧ</p>
+    <p>Подія, що запускає перевірку: ЩЛК (щиглик лівою кнопкою миші)</p>
+
+    <p>Запитання:</p>
+    <p>Чи невірна істинність логічного виразу?</p>
+    <label>
+        <input type="radio" name="answer" id="answer" value="true"> Так
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="answer" id="answer" value="false"> Ні
+    </label>
+    <br>
+    <button onclick="checkAnswer()">Перевірити</button>
+</body>
+</html>

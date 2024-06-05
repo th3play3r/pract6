@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Обчислення суми двох чисел</title>
+    <script>
+        function calculateSum() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Будь ласка, введіть числа у відповідних полях");
+            } else {
+                var sum = num1 + num2;
+                document.getElementById("result").value = sum;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Обчислення суми двох чисел</h1>
+    <form>
+        <label for="num1">Перше число:</label>
+        <input type="text" id="num1" name="num1"><br>
+
+        <label for="num2">Друге число:</label>
+        <input type="text" id="num2" name="num2"><br>
+
+        <input type="button" value="Обчислити суму" onclick="calculateSum()"><br>
+
+        <label for="result">Результат:</label>
+        <input type="text" id="result" name="result" readonly>
+    </form>
+</body>
+</html>

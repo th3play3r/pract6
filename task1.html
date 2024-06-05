@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Кольори фону</title>
+	<meta charset="utf-8">
+	<style>
+
+		ul {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		li {
+			display: inline-block;
+			margin-right: 10px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Кольори фону</h1>
+	<p>Виберіть колір фону:</p>
+	<ul id="color-list">
+		<li data-color="blue">Синій</li>
+		<li data-color="skyblue">Блакитний</li>
+        <li data-color="green">Зелений</li>
+	</ul>
+
+	<script>
+		const colorList = document.getElementById('color-list');
+
+		colorList.addEventListener('click', function(event) {
+			if (event.target.tagName === 'LI') {
+				const selectedColor = event.target.getAttribute('data-color');
+				document.body.style.backgroundColor = selectedColor;
+			}
+		});
+	</script>
+</body>
+</html>
